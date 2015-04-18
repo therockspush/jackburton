@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE>
+{% load crispy_forms_tags %}
+<html>
+    <head>
+        <title>{% block title %}Preferred Routes{% endblock title %}</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+            <style>
+                body {
+                    padding-bottom: 30px;
+                    padding-top: 0px;
+                }
+            
+                </style>
+            {% block css %}{% endblock css %}
+            </head>
+    
+    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            
+            
+            
+            
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="http://www.preferredroutes.com">Preferred Routes</a>
+            </div>
+            
+            {% load staticfiles %}
+            
+            <link rel="stylesheet" type="text/css" href="{% static 'preferredroutes/style.css' %}" />
+            <div class="navbar-collapse collapse">
+                
+            </div><!--/.navbar-collapse -->
+            
+            
+        </div>
+    </div>
+    
+    <div class="container" margin="50px">
+    <header class="image-bg-fluid-height" width="100%">
+    
+        
+        
+            
+            
+        
+            <div class="col-md-2 col-md-offset-1">
+                <form action="stuff"  method="get" target="_blank" class="form-horizontal">
+                    
+                   <div class="row">
+                    
+                    <div class="control-group">
+                        
+                        <label class="control-label" for="inputdep">DEP</label>
+                        <div class="controls">
+                            <input type="text" id="inputdep" name="dep" placeholder="KTEB" autofocus>
+                                </div>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputarr">ARR</label>
+                        <div class="controls">
+                            <input type="text" id="inputarr" name="arr" placeholder="KSFO">
+                                </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputalt">ALT</label>
+                        <div class="controls">
+                            <input type="text" id="inputalt" name="alt" placeholder="optional">
+                                </div>
+                    </div>
+                    
+                    <div class="control-group">
+                        <div class="controls">
+                            <div class="row text-center">
+                            <div class="col-md-12" width="100%">
+                                <button type="submit" value="routewx" class="btn">Get Routes/TAFs</button>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="row text-center">
+                            <div class="col-md-12">
+                                <a href="/tracks" target='blank' style="color:black" class="btn btn-warning btn-sm active" role="button">Show NAT Tracks</a>
+                            </div>
+                            
+                        </div>
+                        
+                </form>
+               
+            </div>
+        </div>
+        <div class="controls">
+            
+        
+    </header>
+    </div>
+    
+    <div class="container">
+        
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-md-8 portfolio-item">
+                
+                
+                
+                <a href={{ firstlink.link }} target='blank' style="color:gray">
+                    <img class="img-responsive1 center-block mdl" src={{ firstlink.image.url }} alt="">
+                        </a>
+                
+                <h3>
+                    <a href={{ firstlink.link }} target='blank' style="color:black">{{ firstlink.title }}</a>
+                </h3>
+                <p>{{ firstlink.blurb }}</p>
+            </div>
+            <!--<div class="row">-->
+                <div class="col-md-4 portfolio-item">
+                    <a href={{ secondlink.link }} target='blank' style="color:gray">
+                        <img class="img-responsive aligncenter" src={{ secondlink.image.url }}  alt="">
+                            </a>
+                    <h3>
+                        <a href={{ secondlink.link }} style="color:black">{{ secondlink.title }}</a>
+                    </h3>
+                    <p>{{ secondlink.blurb }}</p>
+                </div>
+            <!--<div class="row">-->
+                    <div class="col-md-4 portfolio-item">
+                        <a href="{{ thirdlink.link }}" target='blank' style="color:gray">
+                            <img class="img-responsive" src={{ thirdlink.image.url }} alt="">
+                                </a>
+                        <h3>
+                            <a href="{{ thirdlink.link }}" style="color:black">{{ thirdlink.title }}</a>
+                        </h3>
+                        <p>{{ thirdlink.blurb }}</p>
+                    </div>
+                </div>
+        </div>
+        
+        
+                                
+                                <div class="row text-center">
+                                    <div class="col-md-12">
+                                    <a href="/stories" target='blank' style="color:black" class="btn btn-warning btn-sm active" role="button">more stories</a>
+                                    </div>
+                                    
+                                </div>
+                                
+
+
+
+
+
+
+
+
+</html>
